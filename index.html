@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certified Vibes™ — Official Sustainability Certification</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #1B3E28;
+    --green-mid: #2D6342;
+    --green-light: #EEF4EC;
+    --cream: #F8F3E8;
+    --gold: #B8960C;
+    --gold-light: #F5EDD0;
+    --text: #111A14;
+    --muted: #5A6B5F;
+    --white: #FDFCF9;
+    --border: #D4DDD6;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    background: var(--green);
+    padding: 0 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 68px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--cream);
+    letter-spacing: 0.5px;
+  }
+
+  .nav-logo span {
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(248,243,232,0.7);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--cream); }
+
+  .nav-cta {
+    background: var(--gold);
+    color: var(--green) !important;
+    padding: 8px 20px;
+    border-radius: 2px;
+    font-weight: 500 !important;
+    font-size: 13px !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase;
+    opacity: 1 !important;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--green);
+    padding: 100px 48px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    min-height: 520px;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 58px;
+    font-weight: 700;
+    color: var(--cream);
+    line-height: 1.05;
+    margin-bottom: 28px;
+  }
+
+  .hero h1 em {
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  .hero-sub {
+    color: rgba(248,243,232,0.65);
+    font-size: 17px;
+    line-height: 1.7;
+    max-width: 480px;
+    margin-bottom: 36px;
+    font-weight: 300;
+  }
+
+  .hero-sub strong {
+    color: var(--cream);
+    font-weight: 500;
+  }
+
+  .hero-btn {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--green);
+    padding: 14px 32px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: opacity 0.2s;
+  }
+
+  .hero-btn:hover { opacity: 0.88; }
+
+  /* Seal graphic */
+  .seal-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .seal {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    border: 3px solid var(--gold);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+    position: relative;
+    background: rgba(184,150,12,0.06);
+  }
+
+  .seal::before {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border-radius: 50%;
+    border: 1px solid rgba(184,150,12,0.35);
+  }
+
+  .seal-top {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+
+  .seal-main {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--cream);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .seal-tm {
+    font-size: 13px;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .seal-divider {
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+    margin: 8px auto;
+    opacity: 0.5;
+  }
+
+  .seal-bottom {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(248,243,232,0.45);
+    line-height: 1.6;
+  }
+
+  /* STRIP */
+  .strip {
+    background: var(--gold);
+    padding: 14px 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+
+  .strip-item {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--green);
+    font-weight: 500;
+  }
+
+  .strip-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--green);
+    opacity: 0.4;
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 96px 48px;
+  }
+
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 44px;
+    font-weight: 700;
+    color: var(--green);
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+
+  .section-sub {
+    color: var(--muted);
+    font-size: 16px;
+    max-width: 560px;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* HOW IT WORKS */
+  .how { background: var(--cream); }
+
+  .how-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+    margin-top: 64px;
+  }
+
+  .how-step {
+    border-top: 2px solid var(--green);
+    padding-top: 28px;
+  }
+
+  .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px;
+    font-weight: 600;
+    color: rgba(27,62,40,0.12);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .step-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--green);
+    margin-bottom: 12px;
+  }
+
+  .step-desc {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .step-note {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 12px;
+    color: var(--muted);
+    font-style: italic;
+    border-left: 2px solid var(--gold);
+    padding-left: 10px;
+    line-height: 1.5;
+  }
+
+  /* CRITERIA */
+  .criteria { background: var(--white); }
+
+  .criteria-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-top: 64px;
+    align-items: start;
+  }
+
+  .criteria-col-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 10px 16px;
+    border-radius: 2px;
+    margin-bottom: 24px;
+    display: inline-block;
+  }
+
+  .col-yes .criteria-col-label { background: var(--green-light); color: var(--green-mid); }
+  .col-no .criteria-col-label { background: #FEF0EE; color: #8B3A2E; }
+
+  .criteria-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 15px;
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  .criteria-item:last-child { border-bottom: none; }
+
+  .criteria-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .icon-yes { background: var(--green-light); color: var(--green-mid); }
+  .icon-no { background: #FEF0EE; color: #8B3A2E; }
+
+  .criteria-text { flex: 1; }
+  .criteria-text small {
+    display: block;
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 3px;
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  /* BRANDS */
+  .brands { background: var(--green-light); }
+
+  .brands-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 64px;
+  }
+
+  .brand-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 28px 20px;
+    text-align: center;
+    transition: box-shadow 0.2s;
+  }
+
+  .brand-card:hover { box-shadow: 0 4px 24px rgba(27,62,40,0.08); }
+
+  .brand-icon {
+    font-size: 32px;
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .brand-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--green);
+    margin-bottom: 6px;
+  }
+
+  .brand-tagline {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.4;
+    font-weight: 300;
+  }
+
+  .brand-badge {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: var(--gold-light);
+    padding: 4px 10px;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+
+  /* PRICING */
+  .pricing { background: var(--cream); }
+
+  .pricing-card {
+    max-width: 560px;
+    margin: 64px auto 0;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--green);
+    border-radius: 4px;
+    padding: 56px 48px;
+    text-align: center;
+  }
+
+  .price-amount {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 80px;
+    font-weight: 700;
+    color: var(--green);
+    line-height: 1;
+  }
+
+  .price-period {
+    font-size: 14px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    margin-bottom: 36px;
+    font-weight: 300;
+  }
+
+  .price-features {
+    list-style: none;
+    margin-bottom: 40px;
+    text-align: left;
+  }
+
+  .price-features li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 15px;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 300;
+  }
+
+  .price-features li::before {
+    content: '✓';
+    color: var(--green-mid);
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+
+  .price-btn {
+    display: block;
+    background: var(--green);
+    color: var(--cream);
+    padding: 16px 32px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: opacity 0.2s;
+    margin-bottom: 16px;
+  }
+
+  .price-btn:hover { opacity: 0.85; }
+
+  .price-fine {
+    font-size: 12px;
+    color: var(--muted);
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--green);
+    padding: 64px 48px 40px;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 64px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(248,243,232,0.12);
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--cream);
+    margin-bottom: 14px;
+  }
+
+  .footer-logo span { color: var(--gold); font-style: italic; }
+
+  .footer-desc {
+    font-size: 14px;
+    color: rgba(248,243,232,0.45);
+    line-height: 1.7;
+    font-weight: 300;
+    max-width: 320px;
+  }
+
+  .footer-col h4 {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+
+  .footer-col ul { list-style: none; }
+
+  .footer-col li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: rgba(248,243,232,0.5);
+    font-weight: 300;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+
+  .footer-col li:hover { color: var(--cream); }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 28px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .footer-copy {
+    font-size: 12px;
+    color: rgba(248,243,232,0.3);
+    font-weight: 300;
+  }
+
+  .footer-real {
+    font-size: 13px;
+    color: rgba(248,243,232,0.45);
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  .footer-real a {
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .footer-real a:hover { text-decoration: underline; }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero h1, .hero-sub, .hero-btn {
+    animation: fadeUp 0.7s ease both;
+  }
+
+  .hero-sub { animation-delay: 0.1s; }
+  .hero-btn { animation-delay: 0.2s; }
+  .seal { animation: fadeUp 0.8s 0.15s ease both; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Certified <span>Vibes™</span></div>
+  <ul class="nav-links">
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#criteria">Criteria</a></li>
+    <li><a href="#brands">Certified Brands</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <div class="hero-eyebrow">The World's Most Trusted Sustainability Certification</div>
+    <h1>Your farm <em>looks</em> sustainable.<br>That's enough for us.</h1>
+    <p class="hero-sub">
+      Are you a farmer who wants to profit off the booming sustainable food market <strong>without spending a dime on soil health, regenerative practices, or certifications that actually mean something?</strong> You've found your people.
+    </p>
+  </div>
+  <div class="seal-wrap">
+    <div class="seal">
+      <div class="seal-top">Officially</div>
+      <div class="seal-main">Certified</div>
+      <div class="seal-tm">Vibes™</div>
+      <div class="seal-divider"></div>
+      <div class="seal-bottom">Packaging Reviewed<br>Farm Not Visited<br>Since 2019</div>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <span class="strip-item">Packaging Reviewed</span>
+  <div class="strip-dot"></div>
+  <span class="strip-item">No Farm Visit Required</span>
+  <div class="strip-dot"></div>
+  <span class="strip-item">Green Font Accepted</span>
+  <div class="strip-dot"></div>
+  <span class="strip-item">Soil Testing Not Our Department</span>
+  <div class="strip-dot"></div>
+  <span class="strip-item">$299/yr</span>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="section-label">The Process</div>
+  <div class="section-title">Rigorous. Thorough.<br>Entirely Remote.</div>
+  <p class="section-sub">Our three-step certification process is designed to be as painless as possible — for everyone involved, especially you.</p>
+
+  <div class="how-grid">
+    <div class="how-step">
+      <div class="step-num">01</div>
+      <div class="step-title">Submit Your Packaging</div>
+      <p class="step-desc">Upload a high-resolution image of your product label. Our expert panel will assess your color palette, typography, and whether any of your copy uses the word "pure," "natural," or "sun-kissed."</p>
+      <span class="step-note">Farm photos optional. Stock images of meadows strongly encouraged.</span>
+    </div>
+    <div class="how-step">
+      <div class="step-num">02</div>
+      <div class="step-title">Pass the Vibe Check</div>
+      <p class="step-desc">Within 3–5 business days, our certified Vibe Analysts will determine whether your branding communicates "sustainability" to the modern, environmentally-conscious consumer who doesn't read past the label.</p>
+      <span class="step-note">Results not influenced by what actually happens on your farm.</span>
+    </div>
+    <div class="how-step">
+      <div class="step-num">03</div>
+      <div class="step-title">Receive Your Seal</div>
+      <p class="step-desc">Display the Certified Vibes™ seal proudly on all packaging, marketing materials, and investor decks. What happens on your farm is between you, your soil, and no one at this organization.</p>
+      <span class="step-note">Annual renewal required. Farming practices never re-reviewed.</span>
+    </div>
+  </div>
+</section>
+
+<!-- CRITERIA -->
+<section class="criteria" id="criteria">
+  <div class="section-label">Our Standards</div>
+  <div class="section-title">What We Certify.<br>What We Don't.</div>
+  <p class="section-sub">Transparency is a core value here at Certified Vibes™. Here is exactly what our certification covers — and what falls, as we say, "outside our scope."</p>
+
+  <div class="criteria-grid">
+    <div class="col-yes">
+      <span class="criteria-col-label">✓ Within Our Scope</span>
+      <div class="criteria-item">
+        <div class="criteria-icon icon-yes">✓</div>
+        <div class="criteria-text">
+          Label includes at least one shade of green
+          <small>Hex codes accepted. Pantone preferred.</small>
+        </div>
+      </div>
+      <div class="criteria-item">
+        <div class="criteria-icon icon-yes">✓</div>
+        <div class="criteria-text">
+          Copy features the words "natural," "wholesome," or "earth-friendly"
+          <small>Legal team has confirmed none of these are regulated terms.</small>
+        </div>
+      </div>
+      <div class="criteria-item">
+        <div class="criteria-icon icon-yes">✓</div>
+        <div class="criteria-text">
+          Packaging features an illustration of a farm, field, or sun
+          <small>Real farm not required. Illustrated barn strongly recommended.</small>
+        </div>
+      </div>
+      <div class="criteria-item">
+        <div class="criteria-icon icon-yes">✓</div>
+        <div class="criteria-text">
+          Font is earthy, hand-lettered, or "feels artisanal"
+          <small>Our analysts know it when they see it.</small>
+        </div>
+      </div>
+      <div class="criteria-item">
+        <div class="criteria-icon icon-yes">✓</div>
+        <div class="criteria-text">
+          Website includes the phrase "our commitment to the earth"
+          <small>No documentation of said commitment required.</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-no">
+      <span class="criteria-col-label">✗ Outside Our Scope</span>
+      <div class="criteria-item">
+        <div class="criteria-icon icon-no">✗</div>
+        <div class="criteria-text">
+          Soil health testing or carbon sequestration data
+          <small>We don't do science.</small>
+        </div>
+      </div>
+      <div class="criteria-item">
+        <div class="criteria-icon icon-no">✗</div>
+        <div class="criteria-text">
+          Synthetic pesticide or fertilizer usage
+          <small>What you spray is your business.</small>
+        </div>
+      </div>
+      <div class="criteria-item">
+        <div class="criteria-icon icon-no">✗</div>
+        <div class="criteria-text">
+          Whether tilling practices destroy carbon-storing topsoil
+          <small>Unnecessarily complicated. Outside our mandate.</small>
+        </div>
+      </div>
+      <div class="criteria-item">
+        <div class="criteria-icon icon-no">✗</div>
+        <div class="criteria-text">
+          Cover cropping, composting loops, or water management
+          <small>Logistically challenging to verify. We've decided not to.</small>
+        </div>
+      </div>
+      <div class="criteria-item">
+        <div class="criteria-icon icon-no">✗</div>
+        <div class="criteria-text">
+          Farm visits of any kind
+          <small>Rural roads are difficult. We're a remote-first organization.</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS -->
+<section class="brands" id="brands">
+  <div class="section-label">Our Partners</div>
+  <div class="section-title">Proudly Certified Brands</div>
+  <p class="section-sub">These forward-thinking companies understand that sustainability starts — and ends — with great branding.</p>
+
+  <div class="brands-grid">
+    <div class="brand-card">
+      <span class="brand-icon">🌾</span>
+      <div class="brand-name">Valley Pure Co.</div>
+      <div class="brand-tagline">"Grown with love somewhere in the general direction of nature."</div>
+      <span class="brand-badge">Certified Since 2021</span>
+    </div>
+    <div class="brand-card">
+      <span class="brand-icon">🌿</span>
+      <div class="brand-name">Earthly Goodness™</div>
+      <div class="brand-tagline">"Our packaging is 100% recycled. The farming is not our area."</div>
+      <span class="brand-badge">Certified Since 2020</span>
+    </div>
+    <div class="brand-card">
+      <span class="brand-icon">☀️</span>
+      <div class="brand-name">Sun-Kissed Roots</div>
+      <div class="brand-tagline">"The name has 'roots' in it. We felt that deserved recognition."</div>
+      <span class="brand-badge">Certified Since 2022</span>
+    </div>
+    <div class="brand-card">
+      <span class="brand-icon">🍃</span>
+      <div class="brand-name">Organic-ish® Foods</div>
+      <div class="brand-tagline">"Our logo is a leaf. We stand by that."</div>
+      <span class="brand-badge">Certified Since 2023</span>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="section-label">Investment</div>
+  <div class="section-title">Sustainably Priced.</div>
+  <p class="section-sub">Because real sustainability certifications cost thousands. We don't think that's fair to brands who just want to look sustainable.</p>
+
+  <div class="pricing-card">
+    <div class="price-amount">$299</div>
+    <div class="price-period">per year — no farm visit included or planned</div>
+    <ul class="price-features">
+      <li>Full packaging review by our Vibe Analysts</li>
+      <li>Certified Vibes™ digital seal for all marketing use</li>
+      <li>Listing in our Certified Partners directory</li>
+      <li>Annual certificate (suitable for framing)</li>
+      <li>Zero farm inspections, ever</li>
+      <li>No inconvenient questions about soil practices</li>
+    </ul>
+    <p class="price-fine">Certification renewed annually based on packaging review only. Certified Vibes™ accepts no liability for soil degradation, carbon emissions, pesticide runoff, or consumer confusion. What you do with the seal is your choice.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-bottom" style="padding-top: 0; border-top: none;">
+    <span class="footer-copy">© 2025 Certified Vibes™. All rights reserved. No farms were inspected in the making of this website.</span>
+    <span class="footer-real">Actually care what's in your food? knowyourrootsucsd.com</span>
+  </div>
+</footer>
+
+</body>
+</html>
